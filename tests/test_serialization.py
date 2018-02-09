@@ -1,3 +1,4 @@
+import context
 import b3
 import unittest
 
@@ -240,7 +241,7 @@ class TestPriority(unittest.TestCase):
         tree.root = node1;
         tree.title = 'Title in Tree';
         tree.description = 'Tree Description';
-        
+
         data = tree.dump();
 
         self.assertEqual(data['title'], 'Title in Tree');

@@ -1,3 +1,4 @@
+import context
 import unittest
 import mock
 
@@ -27,13 +28,13 @@ class TestBaseNode(unittest.TestCase):
         tree.tick(target, blackboard)
 
         self.assertEqual(node._execute.call_count, 1)
-    
+
     def test_populateBlackboard(self):
         tree = b3.BehaviorTree()
         blackboard = mock.Mock()
         target = {}
         node = mock.Mock()
-        
+
 
         def side_effect(tick):
             tick._enter_node('node1')

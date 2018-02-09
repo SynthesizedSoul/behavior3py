@@ -1,3 +1,4 @@
+import context
 import unittest
 import mock
 
@@ -8,7 +9,7 @@ import b3
 class TestBaseNode(unittest.TestCase):
     def test_initialization(self):
         node = b3.BaseNode()
-        
+
         self.assertIsNotNone(node.id)
         self.assertIsNone(node.category)
         self.assertIsNotNone(node.title)
@@ -36,7 +37,7 @@ class TestBaseNode(unittest.TestCase):
         # test
         expected = [mock.call.blackboard.set('is_open', True, 'tree1', 'node1')]
         result = tick.blackboard.set.mock_calls
-        
+
         self.assertListEqual(result, expected)
 
     def test_closeNode(self):
@@ -56,7 +57,7 @@ class TestBaseNode(unittest.TestCase):
         # test
         expected = [mock.call.blackboard.set('is_open', False, 'tree1', 'node1')]
         result = tick.blackboard.set.mock_calls
-        
+
         self.assertListEqual(result, expected)
 
     def test_executeCallingFunction(self):
@@ -102,7 +103,7 @@ class TestBaseNode(unittest.TestCase):
         # test
         expected = []
         result = tick.blackboard.set.mock_calls
-        
+
         self.assertListEqual(result, expected)
 
     def test_executeCallingTickCallbacks(self):

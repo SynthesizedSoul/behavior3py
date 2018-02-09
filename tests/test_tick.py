@@ -1,10 +1,11 @@
+import context
 import b3
 import unittest
 
 class TestTick(unittest.TestCase):
     def test_initialization(self):
         tick = b3.Tick()
-        
+
         self.assertIsNone(tick.tree)
         self.assertIsNone(tick.debug)
         self.assertIsNone(tick.target)

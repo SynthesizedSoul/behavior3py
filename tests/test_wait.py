@@ -1,3 +1,4 @@
+import context
 import b3
 import unittest
 from common import *
@@ -12,7 +13,7 @@ class TestWait(unittest.TestCase):
     def test_tick(self):
         wait = b3.Wait(milliseconds=15)
         wait.id = 'node1'
-        
+
         _t = time.time()
         tick = TickStub()
         tick.blackboard.get = mock.Mock(side_effect=create_side_effects([
